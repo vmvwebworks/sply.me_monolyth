@@ -1,0 +1,32 @@
+/* colores */
+@import "materialize/components/color";
+$primary-color: #57606f !default;
+$secondary-color: #2C3A47 !default;
+$ambiance-color:  #1e272e !default;
+@import "materialize";
+@import "material_icons";
+
+/* footer adhesivo - sticky footer */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: $ambiance-color;
+}
+main {
+  flex: 1 0 auto;
+}
+// .user-view{
+//   background-color: #efebe9;
+// }
+// .collection{
+//   border: 1px solid #efebe9;
+// }
+// .collection.with-header .collection-header{
+//   background-color: #efebe9;
+//   border-bottom: 0px;
+// }
+// .collection .collection-item{
+//   background-color: #efebe9;
+//   border-bottom: 0px;
+// }
