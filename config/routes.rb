@@ -4,8 +4,8 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registrations: 'users/registrations'
   }
-  get 'subscription/index'
   root 'home#index'
+  resources :subscriptions, only: [:index, :update]
   # devise_for :users, controllers: {
   #   omniauth_callbacks: 'users/omniauth_callbacks',
   #   sessions: 'users/sessions',
