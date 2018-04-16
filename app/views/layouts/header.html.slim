@@ -1,0 +1,30 @@
+header
+  /! Dropdown Structure
+  ul#dropdown1.dropdown-content
+    li
+      = link_to "Salir", destroy_user_session_path(@user), :method => :delete
+
+  ul#dropdown3.dropdown-content
+
+  nav.z-depth-0
+    .nav-wrapper
+      .row
+        .col.s2
+          a.brand-logo href="#" Logo
+        .input-field.col.s8
+          input#search[type="search" required]
+          label.label-icon[for="search"]
+            i.material-icons
+              | search
+          i.material-icons
+            | close
+        .col.s2
+          ul#nav-mobile.right.hide-on-med-and-down
+            - if current_user
+              li
+                a.dropdown-button href="#!" data-activates="dropdown1"
+                  | Mi usuario
+                  i.material-icons.right arrow_drop_down
+            - else
+              li
+                = link_to "Login", new_user_session_path

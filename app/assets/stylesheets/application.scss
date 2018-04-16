@@ -1,8 +1,8 @@
 /* colores */
 @import "materialize/components/color";
-$primary-color: #57606f !default;
+$primary-color: #fc5c65 !default;
 $secondary-color: #2C3A47 !default;
-$ambiance-color:  #1e272e !default;
+$ambiance-color:  #0B0B0B !default;
 @import "materialize";
 @import "material_icons";
 
@@ -15,6 +15,9 @@ body {
 }
 main {
   flex: 1 0 auto;
+}
+input[type="search"]:not(.browser-default){
+  margin: 0 0 0 0;
 }
 // .user-view{
 //   background-color: #efebe9;
