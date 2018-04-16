@@ -1,0 +1,17 @@
+.brown.lighten-5.z-depth-0
+  - unless smart_listing.empty?
+    table.striped.highlight.centered.responsive-table.z-depth-0
+      thead
+        tr
+          th Username
+          th Email
+      tbody
+        - smart_listing.collection.each do |user|
+          tr
+            td = user.name
+            td = user.email
+
+    = smart_listing.paginate
+    = smart_listing.pagination_per_page_links
+  - else
+    p.warning No records!

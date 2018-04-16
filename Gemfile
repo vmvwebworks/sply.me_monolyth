@@ -21,6 +21,8 @@ gem 'jquery-rails'
 gem 'materialize-sass'
 # Material icons
 gem 'material_icons'
+# listing with ajax
+gem "smart_listing"
 # Devise for users registration
 gem 'devise'
 # omniauth for social logins

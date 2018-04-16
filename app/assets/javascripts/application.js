@@ -15,4 +15,5 @@
 //= require rails-ujs
 //= require materialize-sprockets
 //= require turbolinks
+//= require smart_listing
 //= require_tree .
