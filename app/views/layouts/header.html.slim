@@ -12,13 +12,12 @@ header
         .col.s2
           a.brand-logo href="#" Logo
         .input-field.col.s8
-          = smart_listing_controls_for(:users, {class: "form-inline text-right"}) do
-            input#search[type="search" name="user_filter" autocomplete="off" required]
-            label.label-icon[for="search"]
-              i.material-icons
-                | search
+          input#search[type="search" autocomplete="off" required]
+          label.label-icon[for="search"]
             i.material-icons
-              | close
+              | search
+          i.material-icons
+            | close
         .col.s2
           ul#nav-mobile.right.hide-on-med-and-down
             - if current_user
