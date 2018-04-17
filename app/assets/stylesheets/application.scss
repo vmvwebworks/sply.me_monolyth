@@ -7,6 +7,9 @@ $ambiance-color:  #34495E !default;
 @import "material_icons";
 
 /* footer adhesivo - sticky footer */
+.header-logo{
+  height: 100%;
+}
 body {
   display: flex;
   min-height: 100vh;
