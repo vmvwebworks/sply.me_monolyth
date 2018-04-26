@@ -23,11 +23,11 @@ header
           i.material-icons
             | close
         .col.s1
-          ul#nav-mobile.right.hide-on-med-and-down
-            - if current_user
+          - if current_user
+            ul.right.hide-on-med-and-down
               li
-                a.dropdown-button.btn-large.btn-flat.waves-effect href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false" data-alignment="right"
-                  i.material-icons menu
-            - else
-              li
-                = link_to "Login", new_user_session_path
+                a.dropdown-button.z-depth-0.right href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false" data-alignment="right"
+                  i.material-icons.large menu
+          - else
+            a
+              = link_to "Login", new_user_session_path
