@@ -1,6 +1,6 @@
 header
   /! Dropdown Structure
-  ul#dropdown1.dropdown-content
+  ul#dropdown1.dropdown-content.z-depth-0
     li
       a Profile settings
     li
@@ -9,8 +9,6 @@ header
       a subscription
     li
       = link_to "Salir", destroy_user_session_path(@user), :method => :delete
-  ul#dropdown3.dropdown-content
-
   nav.z-depth-0
     .nav-wrapper
       .row
@@ -28,7 +26,7 @@ header
           ul#nav-mobile.right.hide-on-med-and-down
             - if current_user
               li
-                a.dropdown-button.btn-large.btn-flat.waves-effect href="#!" data-activates="dropdown1"
+                a.dropdown-button.btn-large.btn-flat.waves-effect href="#!" data-activates="dropdown1" data-beloworigin="true" data-constrainwidth="false" data-alignment="right"
                   i.material-icons menu
             - else
               li
