@@ -22,6 +22,9 @@ main {
 input[type="search"]:not(.browser-default){
   margin: 0 0 0 0;
 }
+.no-margin-bottom{
+  margin-bottom: 0px;
+}
 // .user-view{
 //   background-color: #efebe9;
 // }

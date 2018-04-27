@@ -16,15 +16,14 @@ header
           a.btn-flat.brand-logo.header-logo.waves-effect href="/"
             = image_tag "language.png", class: "header-logo", style: "padding: 10%;"
         .input-field.col.s10
-          input#search[type="search" autocomplete="off" required]
-          label.label-icon[for="search"]
-            i.material-icons
-              | search
+          i.material-icons.prefix.large.right
+            | search
+          input#search_filter[type="search" autocomplete="off" required]
           i.material-icons
             | close
         .col.s1
           - if current_user
-            .row
+            .row.no-margin-bottom
               .col.s11.offset-s1
                 ul.hide-on-med-and-down
                   li
