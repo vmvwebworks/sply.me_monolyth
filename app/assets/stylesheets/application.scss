@@ -25,17 +25,9 @@ input[type="search"]:not(.browser-default){
 .no-margin-bottom{
   margin-bottom: 0px;
 }
-// .user-view{
-//   background-color: #efebe9;
-// }
-// .collection{
-//   border: 1px solid #efebe9;
-// }
-// .collection.with-header .collection-header{
-//   background-color: #efebe9;
-//   border-bottom: 0px;
-// }
-// .collection .collection-item{
-//   background-color: #efebe9;
-//   border-bottom: 0px;
-// }
+
+/* flat search input */
+.flat-input .input-field input[type="search"]:focus {
+  border-bottom-width: 0px;
+  background-color: black;
+ }
