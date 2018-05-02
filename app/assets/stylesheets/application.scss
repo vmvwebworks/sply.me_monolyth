@@ -1,8 +1,10 @@
 /* colores */
 @import "materialize/components/color";
 $primary-color: #fc5c65 !default;
-$secondary-color: #fc5c65 !default;
+$secondary-color: #215b58 !default;
 $ambiance-color:  #34495E !default;
+$ambiance-darker: #0F141A !default;
+$ambiance-lighter: #DADDE1 !default;
 @import "materialize";
 @import "material_icons";
 
@@ -27,7 +29,14 @@ input[type="search"]:not(.browser-default){
 }
 
 /* flat search input */
-.flat-input .input-field input[type="search"]:focus {
+.flat-input .input-field input[type=search]:active {
   border-bottom-width: 0px;
-  background-color: black;
- }
+  background-color: $ambiance-lighter;
+}
+.input-field input[type=search]:focus {
+  border-bottom-width: 0px;
+  box-shadow: 0px 0 0 #000;
+  background-color: $ambiance-lighter;
+  color: $secondary-color;
+  font-size: 2em;
+}
