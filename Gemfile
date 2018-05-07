@@ -23,6 +23,8 @@ gem 'materialize-sass'
 gem 'material_icons'
 # listing with ajax
 gem "smart_listing"
+# country_select
+gem 'country_select'
 # Devise for users registration
 gem 'devise'
 # omniauth for social logins
