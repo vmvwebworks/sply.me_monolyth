@@ -9,7 +9,6 @@ html
   body
     = render :file =>"layouts/header"
     main
-      .row
-        = render "shared/flash_messages"
-        = yield
+      = yield
+      = render "shared/flash_messages"
 = render :file =>"layouts/footer"

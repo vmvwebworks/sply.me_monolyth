@@ -1,9 +1,10 @@
 header
   /! Dropdown Structure
   ul#dropdown1.dropdown-content.z-depth-0
-    = link_to "Profile settings", edit_user_registration_path
     li
-      a payments
+      = link_to "Profile settings", edit_user_registration_path
+    li
+      = link_to "Payments", payments_path
     li
       a subscription
     li
