@@ -79,6 +79,8 @@ GEM
       money (~> 6.9)
       sixarm_ruby_unaccent (~> 1.1)
       unicode_utils (~> 1.4)
+    countries_and_languages (0.2.0)
+      i18n_data
     country_select (3.1.1)
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
@@ -331,6 +333,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  countries_and_languages
   country_select
   devise
   dotenv-rails

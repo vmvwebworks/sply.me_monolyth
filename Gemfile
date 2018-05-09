@@ -23,6 +23,8 @@ gem 'materialize-sass'
 gem 'material_icons'
 # listing with ajax
 gem "smart_listing"
+# countries and languages
+gem 'countries_and_languages', :require => 'countries_and_languages/rails'
 # country_select
 gem 'country_select'
 # Devise for users registration
