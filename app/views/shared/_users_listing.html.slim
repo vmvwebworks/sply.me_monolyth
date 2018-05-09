@@ -6,11 +6,24 @@
           tr
             th Username
             th Email
+            th Language
+            th Country
+            th Price
+            th Currency
+            th Request
+
         tbody
           - smart_listing.collection.each do |user|
             tr
               td = user.name
               td = user.email
+              td = user.language
+              td = user.country_code
+              td = user.price
+              td = user.currency
+              td
+                a request
+                / link_to
       = smart_listing.paginate
       = smart_listing.pagination_per_page_links
   - else

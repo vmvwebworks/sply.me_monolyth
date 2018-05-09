@@ -37,33 +37,9 @@
             br
             = f.select :currency, currencies
         .row
-          .input-field.col.s6
-            = f.label :password
-            i
-              | (leave blank if you don't want to change it)
-            br
-            = f.password_field :password, autocomplete: "off"
-            - if @minimum_password_length
-              br
-              em
-                = @minimum_password_length
-                |  characters minimum
-          .input-field.col.s6
-            = f.label :password_confirmation
-            br
-            = f.password_field :password_confirmation, autocomplete: "off"
-        .row
-          .input-field.col.s12
-            = f.label :current_password
-            = f.password_field :current_password, autocomplete: "off", style: "font-size: 4em"
-            i
-              | (we need your current password to confirm your changes)
-          .row
-            .col.s2
-              = f.submit "Update", class: "btn-large z-depth-0 waves-primary"
-            .col.s3.offset-s6
-              = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "btn-large z-depth-0 red", method: :delete
-
+          .col.s2
+            = f.submit "Update", class: "btn-large z-depth-0 waves-primary"
+          .col.s3.offset-s6
 javascript:
   $(document).ready(function() {
       $('select').material_select({classes: "z-depth-0"});
