@@ -8,3 +8,9 @@ ul.tabs
   li.tab.col.s4
     a[href="#test3"]
       | Incomming Payments
+.col.s12#test1
+  = render "payments/shared/pending"
+.col.s12#test2
+  = render "payments/shared/paid"
+.col.s12#test3
+  = render "payments/shared/incomming"

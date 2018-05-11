@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_07_175124) do
+ActiveRecord::Schema.define(version: 2018_05_11_143626) do
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.string "payer"
-    t.string "provider"
+    t.string "payer_id"
+    t.string "provider_id"
     t.decimal "ammount", precision: 10
     t.string "currency"
     t.decimal "minutes", precision: 10
-    t.boolean "state"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

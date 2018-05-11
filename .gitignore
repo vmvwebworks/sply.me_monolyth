@@ -27,3 +27,5 @@
 
 # Never expose sensetive keys
 .env
+.ruby-gemset
+.ruby-version
