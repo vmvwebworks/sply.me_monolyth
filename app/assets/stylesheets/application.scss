@@ -8,6 +8,36 @@ $ambiance-lighter: #DADDE1 !default;
 @import "materialize";
 @import "material_icons";
 
+div{
+  .primary{
+    background-color: $primary-color;
+  }
+  .secondary{
+    background-color: $secondary-color;
+  }
+  .ambiance-lighter{
+    background-color: $ambiance-lighter;
+  }
+  .ambiance-darker{
+    background-color: $ambiance-darker;
+  }
+}
+*{
+  .primary-text{
+    color: $primary-color;
+  }
+  .secondary-text{
+    color: $secondary-color;
+  }
+  .ambiance-darker-text{
+    color: $ambiance-darker;
+  }
+  .ambiance-lighter-text{
+    color: $ambiance-lighter;
+  }
+
+}
+
 /* footer adhesivo - sticky footer */
 .header-logo{
   height: 100%;
@@ -39,7 +69,4 @@ input[type="search"]:not(.browser-default){
   background-color: $ambiance-lighter;
   color: $secondary-color;
   font-size: 2em;
-}
-div.ambiance-lighter{
-  background-color: $ambiance-lighter;
 }

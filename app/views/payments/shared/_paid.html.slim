@@ -1,1 +1,15 @@
-= render current_user.outcomming_payments.done_payments
+.brown.lighten-5.z-depth-0
+  .col.s12.brown.lighten-5.z-depth-0
+    table.striped.highlight.centered.responsive-table.z-depth-0
+      thead
+        tr
+          th Payer
+          th Provider
+          th Ammount
+          th Currency
+          th Minutes
+          th State
+      tbody
+        tr
+          td
+            = render current_user.outcomming_payments.done_payments

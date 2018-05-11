@@ -1,16 +1,17 @@
 ul.tabs
-  li.tab.col.s4
-    a[href="#test1"]
+  li.tab.col.s4.red.lighten-2
+    a.grey-text.text-lighten-5[href="#test1"]
       | Pending payments
-  li.tab.col.s4
-    a[href="#test2"]
+  li.tab.col.s4.cyan.lighten-2
+    a.grey-text.text-lighten-5[href="#test2"]
       | Done payments
-  li.tab.col.s4
-    a[href="#test3"]
+  li.tab.col.s4.green.lighten-2
+    a.grey-text.text-lighten-5[href="#test3"]
       | Incomming Payments
-.col.s12#test1
+
+#test1
   = render "payments/shared/pending"
-.col.s12#test2
+#test2
   = render "payments/shared/paid"
-.col.s12#test3
+#test3
   = render "payments/shared/incomming"
