@@ -1,45 +1,46 @@
-.col.s8.offset-s2
-  .card.z-depth-0.grey.lighten-5
-    .card-content
-      .card-title
-        h2 Sign up
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        = devise_error_messages!
-        .row
-          .input-field.col.s6
-            = f.label :name
-            br
-            = f.text_field :name
-          .input-field.col.s6
-            = f.label :email
-            br
-            = f.email_field :email, autofocus: true, autocomplete: "email"
-          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-            div
-              | Currently waiting confirmation for:
-              = resource.unconfirmed_email
-        .row.primary
-          .input-field.col.s6
-            = f.label :country
-            br
-            = f.country_select :country_code
-          .input-field.col.s6
-            = f.label :language
-            br
-            = f.select(:language,options_for_select(languages))
-        .row
-          .input-field.col.s6
-            = f.label :price
-            br
-            = f.range_field :price, {min: 0, max: 100}
-          .input-field.col.s6
-            = f.label :currency
-            br
-            = f.select :currency, currencies
-        .row
-          .col.s2
-            = f.submit "Update", class: "btn-large z-depth-0 waves-primary"
-          .col.s3.offset-s6
+.row
+  .col.s8.offset-s2
+    .card.z-depth-0.grey.lighten-5
+      .card-content
+        .card-title
+          h2 Update data
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          = devise_error_messages!
+          .row
+            .input-field.col.s6
+              = f.label :name
+              br
+              = f.text_field :name
+            .input-field.col.s6
+              = f.label :email
+              br
+              = f.email_field :email, autofocus: true, autocomplete: "email"
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              div
+                | Currently waiting confirmation for:
+                = resource.unconfirmed_email
+          .row
+            .input-field.col.s6
+              = f.label :country
+              br
+              = f.country_select :country_code
+            .input-field.col.s6
+              = f.label :language
+              br
+              = f.select(:language,options_for_select(languages))
+          .row
+            .input-field.col.s6
+              = f.label :price
+              br
+              = f.range_field :price, {min: 0, max: 100}
+            .input-field.col.s6
+              = f.label :currency
+              br
+              = f.select :currency, currencies
+          .row
+            .col.s2
+              = f.submit "Update", class: "btn-large z-depth-0 waves-primary"
+            .col.s3.offset-s6
 javascript:
   $(document).ready(function() {
       $('select').material_select({classes: "z-depth-0"});

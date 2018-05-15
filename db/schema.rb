@@ -25,8 +25,7 @@ ActiveRecord::Schema.define(version: 2018_05_11_143626) do
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.bigint "user_id"
-    t.datetime "renew_date"
-    t.boolean "state"
+    t.datetime "period_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_subscriptions_on_user_id"

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
   }
   root 'home#index'
-  resources :subscriptions, only: [:index, :update]
+  resources :subscriptions, only: [:index, :create]
   resources :payments
   # devise_for :users, controllers: {
   #   omniauth_callbacks: 'users/omniauth_callbacks',

@@ -1,4 +1,44 @@
-h1
-  | Subscription#index
-p
-  | Find me in app/views/subscription/index.html.erb
+.col.s12.carousel.carousel-slider.center[data-indicators="true"]
+  .carousel-fixed-item.center
+    p.flow-text.ambiance-lighter-text Elige subscripción y podrás acceder a las conversaciones.
+  .carousel-item.primary.white-text[href="#one!"]
+    h2
+      | Paga mes a mes... ¡Y ya está!
+    p.white-text
+      | Controla el gasto, así si un mes no lo usas pues no pagas.
+    h3 3€/mes
+    a.btn-floating.btn-flat.waves-effect.waves-light.secondary.btn-large.z-depth-0
+      i.large.material-icons
+        | play_arrow
+  .carousel-item.secondary.white-text[href="#two!"]
+    h2
+      | 3x2
+    p.white-text
+      | Consigue tres meses al precio de dos.
+    h3 6€ (2€/mes)
+    a.btn-floating.btn-flat.waves-effect.waves-light.primary.btn-large.z-depth-0
+      i.large.material-icons
+        | play_arrow
+  .carousel-item.ambiance-color.primary-text[href="#three!"]
+    h2
+      | Medio año
+    p.white-text
+      | Ahorra con 6 meses de subscripción
+    h3 10€ (1'66€/mes)
+    a.btn-floating.btn-flat.waves-effect.waves-light.secondary.btn-large.z-depth-0
+      i.large.material-icons
+        | play_arrow
+  .carousel-item.ambiance-darker.white-text[href="#four!"]
+    h2.amber-text.text-darken-2
+      | Todo un año de subscripción
+    p.white-text
+      | Elige este plan y... ¡Ya nos vemos el año que viene!
+    h3.teal-text.text-lighten-4 13€ (1,08€/mes)
+    a.btn-floating.btn-flat.waves-effect.waves-light.secondary.btn-large.z-depth-0
+      i.large.material-icons
+        | play_arrow
+
+
+
+javascript:
+  $('.carousel.carousel-slider').carousel({fullWidth: true});

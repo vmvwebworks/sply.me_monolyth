@@ -6,7 +6,7 @@ header
     li
       = link_to "Payments", payments_path
     li
-      a subscription
+      = link_to "subscription", subscriptions_path
     li
       = link_to "Salir", destroy_user_session_path(@user), :method => :delete
   nav.z-depth-0
