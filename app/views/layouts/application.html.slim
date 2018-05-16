@@ -9,5 +9,9 @@ html
   body
     = render :file =>"layouts/header"
     main
+      = render "shared/sidenav"
       = yield
 = render :file =>"layouts/footer"
+/ a.btn-floating.btn-large.waves-effect.waves-light.red.button-collapse style="bottom: 50px" href="#" data-activates="slide-out"
+/   i.material-icons
+/     | menu

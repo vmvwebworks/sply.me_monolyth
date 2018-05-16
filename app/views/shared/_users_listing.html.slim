@@ -22,9 +22,64 @@
               td = user.price
               td = user.currency
               td
-                a request
-                / link_to
+                a.modal-trigger[href="#modal1"]
+                  = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
       = smart_listing.paginate
       = smart_listing.pagination_per_page_links
   - else
     p.warning No records!
+
+#modal1.modal.z-depth-0
+  .modal-content
+    ul#tabs-swipe-demo.tabs.row
+      li.tab.col.s6.grey.lighten-2
+        a[href="#test-swipe-1"]
+          | Waiting list
+      li.tab.col.s6.amber.lighten-1
+        a.active[href="#test-swipe-2"]
+          | Accept
+    #test-swipe-1.col.s12
+      table
+        thead
+          tr
+            th
+              | Name
+            th
+              | Item Name
+            th
+              | Item Price
+        tbody
+          tr
+            td
+              | Alvin
+            td
+              | Eclair
+            td
+              | $0.87
+          tr
+            td
+              | Alan
+            td
+              | Jellybean
+            td
+              | $3.76
+          tr
+            td
+              | Jonathan
+            td
+              | Lollipop
+            td
+              | $7.00
+
+    #test-swipe-2.col.s12.center-align
+      p.flow-text The user accepted the request
+      h5. Charge AMMOUNT
+      .row
+        .col.s3.offset-s9
+          botton.btn-large.secondary.z-depth-0 Ready?
+
+
+javascript:
+  $(document).ready(function(){
+      $('.modal').modal({opacity: 0});
+  });
