@@ -24,6 +24,7 @@
               td
                 a.modal-trigger[href="#modal1"]
                   = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
+
       = smart_listing.paginate
       = smart_listing.pagination_per_page_links
   - else
@@ -76,7 +77,8 @@
       h5. Charge AMMOUNT
       .row
         .col.s3.offset-s9
-          botton.btn-large.secondary.z-depth-0 Ready?
+          / = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
+          = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
 
 
 javascript:
