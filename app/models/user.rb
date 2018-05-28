@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   include UserFilter
   has_one :subscription
+  has_and_belongs_to_many :conversations
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :trackable, :omniauthable, :timeoutable, omniauth_providers: [:google_oauth2]
