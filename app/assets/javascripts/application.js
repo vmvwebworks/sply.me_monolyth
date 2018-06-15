@@ -16,4 +16,5 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require smart_listing
+//= action_cable_meta_tag
 //= require_tree .
