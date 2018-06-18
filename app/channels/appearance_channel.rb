@@ -1,6 +1,5 @@
 class AppearanceChannel < ApplicationCable::Channel
   def subscribed
-    puts 'eeeeeeeeeeeaaaaaaaaaa'
     current_user.appear
   end
 

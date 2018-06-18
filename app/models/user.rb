@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   include UserFilter
   has_one :subscription
+  has_one :join_list
+  has_one :join
   has_and_belongs_to_many :conversations
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -17,5 +19,5 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
-  
+
 end

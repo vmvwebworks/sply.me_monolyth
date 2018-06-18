@@ -1,6 +1,5 @@
-App.join = App.cable.subscriptions.create {channel: "JoinChannel", user: "user_id"},
+App.join = App.cable.subscriptions.create "JoinChannel",
   connected: ->
-    alert 'eeeeeo'
     # Called when the subscription is ready for use on the server
 
   disconnected: ->
@@ -8,3 +7,6 @@ App.join = App.cable.subscriptions.create {channel: "JoinChannel", user: "user_i
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+  joinTheList: (listId) ->
+    @perform "join", list_id: listId
+  leave: ->
