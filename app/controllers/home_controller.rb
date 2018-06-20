@@ -2,8 +2,7 @@ class HomeController < ApplicationController
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
   def index
-    @users = User.online
-    @users = User.starts_with(params[:query]) if params[:query]
-    smart_listing_create :users, @users, partial: "shared/users_listing", page_sizes: [4]
+    @join_listings = JoinList.all
+    @join_listings = @join_listings.filtered(params[:query]) if params[:query]
   end
 end

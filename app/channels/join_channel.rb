@@ -3,7 +3,7 @@ class JoinChannel < ApplicationCable::Channel
     if current_user.join_list.nil?
       current_user.create_join_list
     end
-    stream_from "join_channel"
+    #stream_from "join_channel"
   end
 
   def unsubscribed
