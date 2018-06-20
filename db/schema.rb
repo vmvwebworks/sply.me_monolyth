@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_134550) do
+ActiveRecord::Schema.define(version: 2018_06_20_162637) do
 
   create_table "conversations", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(version: 2018_06_18_134550) do
     t.index ["user_id"], name: "index_join_lists_on_user_id"
   end
 
-  create_table "joins", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "joinings", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "join_list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["join_list_id"], name: "index_joins_on_join_list_id"
-    t.index ["user_id"], name: "index_joins_on_user_id"
+    t.index ["join_list_id"], name: "index_joinings_on_join_list_id"
+    t.index ["user_id"], name: "index_joinings_on_user_id"
   end
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|

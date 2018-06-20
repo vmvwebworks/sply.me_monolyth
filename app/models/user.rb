@@ -2,7 +2,7 @@ class User < ApplicationRecord
   include UserFilter
   has_one :subscription
   has_one :join_list
-  has_one :join
+  has_one :joining
   has_and_belongs_to_many :conversations
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

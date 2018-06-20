@@ -57,7 +57,13 @@ input[type="search"]:not(.browser-default){
 .no-margin-bottom{
   margin-bottom: 0px;
 }
-
+.collection{
+  border: 0px;
+}
+.collection-item{
+  border: 0px;
+  border-bottom: 0px;
+}
 /* flat search input */
 .flat-input .input-field input[type=search]:active {
   border-bottom-width: 0px;
