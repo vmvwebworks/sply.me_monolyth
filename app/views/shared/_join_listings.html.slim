@@ -37,7 +37,7 @@
                 ul.collection
                   - unless join_listing.joinings.empty?
                     - join_listing.joinings.each do |joining|
-                      li = joining
+                      li = joining.user.name
                         a.collection-item.center-align aloha
               #test-swipe-2.col.s12.center-align
                 p.flow-text The user accepted the request

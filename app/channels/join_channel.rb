@@ -13,6 +13,6 @@ class JoinChannel < ApplicationCable::Channel
   end
   def join(data)
     joinlist = JoinList.find(data['list_id'])
-    current_user.create_join(join_list_id: joinlist.id)
+    current_user.create_joining(join_list_id: joinlist.id)
   end
 end
