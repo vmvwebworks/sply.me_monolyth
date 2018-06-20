@@ -23,6 +23,9 @@
             td
               a.modal-trigger[href="#join_listing#{join_listing.id}"]
                 = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
+              javascript:
+                $('.modal-trigger').on("click", App.join.joinTheList(#{join_listing.id}));
+
 
           .modal.z-depth-0 id="join_listing#{join_listing.id}"
             .modal-content
@@ -50,12 +53,10 @@ javascript:
   $(document).ready(function(){
       $('.modal').modal({opacity: 0});
 
-  });
-  $(document).ready(function(){
-    $("#query").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("tr").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $("#query").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
       });
-    });
   });
