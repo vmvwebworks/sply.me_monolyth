@@ -10,3 +10,15 @@ App.join = App.cable.subscriptions.create "JoinChannel",
   joinTheList: (listId) ->
     @perform "join", list_id: listId
   leave: ->
+
+document.addEventListener 'turbolinks:load', ->
+  $('.modal').modal opacity: 0
+  $('.modal-trigger').click ->
+    joinListId = $(this).attr('id')
+    console.log joinListId
+    App.join.joinTheList joinListId
+    return
+  $('#query').on 'keyup', ->
+    value = $(this).val().toLowerCase()
+    $('tr').filter ->
+      $(this).toggle $(this).text().toLowerCase().indexOf(value) > -1

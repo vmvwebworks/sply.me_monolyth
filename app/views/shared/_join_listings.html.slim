@@ -21,13 +21,9 @@
             td = join_listing.user.price
             td = join_listing.user.currency
             td
-              a.modal-trigger[href="#join_listing#{join_listing.id}"]
+              a.modal-trigger[href="#joinList#{join_listing.id}" id="#{join_listing.id}"]
                 = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
-              javascript:
-                $('.modal-trigger').on("click", App.join.joinTheList(#{join_listing.id}));
-
-
-          .modal.z-depth-0 id="join_listing#{join_listing.id}"
+          .modal.z-depth-0 id="joinList#{join_listing.id}"
             .modal-content
               ul#tabs-swipe-demo.tabs.row
                 li.tab.col.s6.grey.lighten-2
@@ -49,14 +45,3 @@
                   .col.s3.offset-s9
                     / = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
                     = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
-javascript:
-  $(document).ready(function(){
-      $('.modal').modal({opacity: 0});
-
-      $("#query").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-  });
