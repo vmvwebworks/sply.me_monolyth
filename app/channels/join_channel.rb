@@ -4,6 +4,7 @@ class JoinChannel < ApplicationCable::Channel
       current_user.create_join_list
     end
     stream_from "join_channel"
+    render_all
   end
 
   def unsubscribed
