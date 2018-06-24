@@ -27,7 +27,7 @@ class JoinChannel < ApplicationCable::Channel
     render_all
   end
   def render_all
-    puts "entra  en render_all"
+    puts "render_all method, building for json response"
     joinlistArr = []
     joinlists = JoinList.joins(:user)
     joinlists.each do |joinlist|
