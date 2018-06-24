@@ -1,0 +1,29 @@
+tr
+  td = joinList.user.name
+  td = joinList.user.email
+  td = joinList.user.language
+  td = joinList.user.country_code
+  td = joinList.user.price
+  td = joinList.user.currency
+  td
+    a.modal-trigger[href="#joinList#{joinList.id}" id="#{joinList.id}"]
+      = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
+/ .modal.z-depth-0 id="joinList#{join_list.id}"
+/   .modal-content
+/     ul#tabs-swipe-demo.tabs.row
+/       li.tab.col.s6.grey.lighten-2
+/         a[href="#test-swipe-1"]
+/           | Waiting list
+/       li.tab.col.s6.amber.lighten-1
+/         a.active[href="#test-swipe-2"]
+/           | Accept
+/     #test-swipe-1.col.s12
+/       ul.collection
+/         = render join_list.joinings
+/     #test-swipe-2.col.s12.center-align
+/       p.flow-text The user accepted the request
+/       h5. Charge AMMOUNT
+/       .row
+/         .col.s3.offset-s9
+/           / = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
+/           = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
