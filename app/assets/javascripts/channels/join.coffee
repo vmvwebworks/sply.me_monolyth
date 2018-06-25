@@ -17,16 +17,19 @@ App.join = App.cable.subscriptions.create "JoinChannel",
           <td>#{joinList['user']['price']}</td>
           <td>#{joinList['user']['currency']}</td>
           <td>
-            <a class='modal-trigger' id='#{joinList['list']['id']}' href=#joinList#{joinList['list']['id']} >
+            <a class='modal-trigger' id='#{joinList['list']['id']}' href='#modal1' >
              Join
             </a>
           </td>
         </tr>
         ")
     $('.modal-trigger').click ->
-      console.log("eeeeeaa")
       joinListId = $(this).attr('id')
       App.join.joinTheList joinListId
+      joinings = joinList['joinings']
+      $('#joinings').empty()
+      for joining in joinings
+        $('#joinings').append("<li><a class='collection-item center-align'>#{joining['user']['name']}</a></li>")
   # Called when there's incoming data on the websocket for this channel
   joinTheList: (listId) ->
     @perform "join", list_id: listId
@@ -38,6 +41,7 @@ document.addEventListener 'turbolinks:load', ->
     value = $(this).val().toLowerCase()
     $('tr').filter ->
       $(this).toggle $(this).text().toLowerCase().indexOf(value) > -1
-  # $('.modal').modal opacity: 0
-  $('.modal-trigger').click ->
-    console.log("eeeeeaa")
+
+
+$(document).ready ->
+  $('.modal').modal opacity: 0

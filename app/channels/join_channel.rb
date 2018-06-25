@@ -31,7 +31,13 @@ class JoinChannel < ApplicationCable::Channel
     joinlistArr = []
     joinlists = JoinList.joins(:user)
     joinlists.each do |joinlist|
-      joinlistArr << {'list' => joinlist, 'user' => joinlist.user}
+      joiningusers = []
+      joinlist.joinings.each do |joining|
+        joiningusers << {'user' => joining.user}
+      end
+      puts "dame debajo lo que hay en joiningusers"
+      puts joiningusers
+      joinlistArr << {'list' => joinlist, 'user' => joinlist.user, 'joinings' => joiningusers}
     end
     ActionCable.server.broadcast "join_channel", {joinLists: joinlistArr}
   end

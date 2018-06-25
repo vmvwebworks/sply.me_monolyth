@@ -12,7 +12,11 @@
           th Request
       tbody#join_list_table
 
-.modal.modal-trigger.z-depth-0
+      a.modal-trigger[href="#modal1"]
+        = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
+
+
+.modal.z-depth-0#modal1
  .modal-content
    ul#tabs-swipe-demo.tabs.row
      li.tab.col.s6.grey.lighten-2
@@ -22,7 +26,7 @@
        a.active[href="#test-swipe-2"]
          | Accept
    #test-swipe-1.col.s12
-     ul.collection
+     ul.collection#joinings
        / - unless join_listing.joinings.empty?
        /   - join_listing.joinings.each do |joining|
        /     li = joining
