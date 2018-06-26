@@ -24,6 +24,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'slim'
 # Use Jquery
 gem 'jquery-rails'
+# Use Webpacker
+gem 'webpacker', '~> 3.5'
 # Use materialize as styles framework
 gem 'materialize-sass'
 # Material icons
