@@ -11,30 +11,3 @@
           th Currency
           th Request
       tbody#join_list_table
-
-      a.modal-trigger[href="#modal1"]
-        = image_tag "chat.png", class: "header-logo", style: "max-height: 35px;"
-
-
-.modal.z-depth-0#modal1
- .modal-content
-   ul#tabs-swipe-demo.tabs.row
-     li.tab.col.s6.grey.lighten-2
-       a[href="#test-swipe-1"]
-         | Waiting list
-     li.tab.col.s6.amber.lighten-1
-       a.active[href="#test-swipe-2"]
-         | Accept
-   #test-swipe-1.col.s12
-     ul.collection#joinings
-       / - unless join_listing.joinings.empty?
-       /   - join_listing.joinings.each do |joining|
-       /     li = joining
-       /       a.collection-item.center-align aloha
-   #test-swipe-2.col.s12.center-align
-     p.flow-text The user accepted the request
-     h5. Charge AMMOUNT
-     .row
-       .col.s3.offset-s9
-         / = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
-         / = button_to "Ready", conversations_path, class: "botton btn-large secondary z-depth-0"
