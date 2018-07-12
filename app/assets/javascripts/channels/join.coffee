@@ -50,7 +50,7 @@ App.join = App.cable.subscriptions.create "JoinChannel",
         $("#joinings#{joinList['list']['id']}").append("<li id='user_#{joining['user']['id']}_joining'><a class='collection-item z-depth-0 center-align'>#{joining['user']['name']}</a></li>")
 
 document.addEventListener 'turbolinks:load', ->
-  # App.join.perform "render_all"
+  App.join.perform "render_all"
   $('#query').on 'keyup', ->
     value = $(this).val().toLowerCase()
     $('tr').filter ->
