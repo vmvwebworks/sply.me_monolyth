@@ -19,35 +19,36 @@ App.join = App.cable.subscriptions.create "JoinChannel",
   render_list: (data) ->
     joinLists = data['joinLists']
     for joinList in joinLists
-      $('#join_list_table').append(
-        "<tr>
-          <td>#{joinList['user']['name']}</td>
-          <td>#{joinList['user']['email']}</td>
-          <td>#{joinList['user']['language']}</td>
-          <td>#{joinList['user']['country_code']}</td>
-          <td>#{joinList['user']['price']}</td>
-          <td>#{joinList['user']['currency']}</td>
-          <td>
-            <a class='modal-trigger' id='#{joinList['list']['id']}' href='#modal#{joinList['list']['id']}' >
-             Join
-            </a>
-          </td>
-        </tr>
-        ")
-      $('main').append(
-        "<div class='modal z-depth-0' id='modal#{joinList['list']['id']}'>
-          <div class='modal-content'>
-            <div class='col s12'>
-              <ul id='joinings#{joinList['list']['id']}' class='collection with-header'>
-                <li class='collection-header'><h4>Join list</h4></li>
-              </ul>
+      if joinList['user']['id'] != data['current_user_id']
+        $('#join_list_table').append(
+          "<tr>
+            <td>#{joinList['user']['name']}</td>
+            <td>#{joinList['user']['email']}</td>
+            <td>#{joinList['user']['language']}</td>
+            <td>#{joinList['user']['country_code']}</td>
+            <td>#{joinList['user']['price']}</td>
+            <td>#{joinList['user']['currency']}</td>
+            <td>
+              <a class='modal-trigger' id='#{joinList['list']['id']}' href='#modal#{joinList['list']['id']}' >
+               Join
+              </a>
+            </td>
+          </tr>
+          ")
+        $('main').append(
+          "<div class='modal z-depth-0' id='modal#{joinList['list']['id']}'>
+            <div class='modal-content'>
+              <div class='col s12'>
+                <ul id='joinings#{joinList['list']['id']}' class='collection with-header'>
+                  <li class='collection-header'><h4>Join list for #{joinList['user']['name']}</h4></li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>")
-      joinings = joinList['joinings']
-      for joining in joinings
-        $("#user_#{joining['user']['id']}_joining").remove();
-        $("#joinings#{joinList['list']['id']}").append("<li id='user_#{joining['user']['id']}_joining'><a class='collection-item z-depth-0 center-align'>#{joining['user']['name']}</a></li>")
+          </div>")
+        joinings = joinList['joinings']
+        for joining in joinings
+          $("#user_#{joining['user']['id']}_joining").remove();
+          $("#joinings#{joinList['list']['id']}").append("<li id='user_#{joining['user']['id']}_joining'><a class='collection-item z-depth-0 center-align'>#{joining['user']['name']}</a></li>")
 
 document.addEventListener 'turbolinks:load', ->
   App.join.perform "render_all"
