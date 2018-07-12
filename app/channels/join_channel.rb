@@ -39,6 +39,6 @@ class JoinChannel < ApplicationCable::Channel
       puts joiningusers
       joinlistArr << {'list' => joinlist, 'user' => joinlist.user, 'joinings' => joiningusers}
     end
-    ActionCable.server.broadcast "join_channel", {joinLists: joinlistArr}
+    ActionCable.server.broadcast "join_channel", {joinLists: joinlistArr, current_user_id: current_user.id}
   end
 end
