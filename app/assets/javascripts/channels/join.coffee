@@ -1,4 +1,5 @@
 App.join = App.cable.subscriptions.create "JoinChannel",
+
   connected: ->
     # Called when the subscription is ready for use on the server
   disconnected: ->
@@ -6,6 +7,7 @@ App.join = App.cable.subscriptions.create "JoinChannel",
   received: (data) ->
     $('#join_list_table').empty()
     this.render_list(data)
+    $(".button-collapse").sideNav();
     $(".modal-trigger").click ->
       joinListId = $(this).attr('id')
       App.join.joinTheList joinListId
@@ -19,6 +21,7 @@ App.join = App.cable.subscriptions.create "JoinChannel",
   render_list: (data) ->
     joinLists = data['joinLists']
     for joinList in joinLists
+      joinings = joinList['joinings']
       if joinList['user']['id'] != data['current_user_id']
         $('#join_list_table').append(
           "<tr>
@@ -45,11 +48,14 @@ App.join = App.cable.subscriptions.create "JoinChannel",
               </div>
             </div>
           </div>")
-        joinings = joinList['joinings']
+
         for joining in joinings
           $("#user_#{joining['user']['id']}_joining").remove();
           $("#joinings#{joinList['list']['id']}").append("<li id='user_#{joining['user']['id']}_joining'><a class='collection-item z-depth-0 center-align'>#{joining['user']['name']}</a></li>")
-
+      else
+        joinings = joinList['joinings']
+        for joining in joinings
+          $('#slide-out').append("<li id='user_#{joining['user']['id']}_joining'><a class='collection-item z-depth-0 center-align'>#{joining['user']['name']}</a></li>")
 document.addEventListener 'turbolinks:load', ->
   App.join.perform "render_all"
   $('#query').on 'keyup', ->

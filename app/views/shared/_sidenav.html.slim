@@ -4,10 +4,3 @@
   a.button-collapse.btn-floating.btn-large.secondary href="#" data-activates="slide-out"
     i.material-icons chat_bubble_outline
 ul#slide-out.side-nav
-  - if current_user && current_user.join_list
-    - current_user.join_list.joinings.each do |joining|
-      li
-        = joining.user.name
-
-javascript:
-  $(".button-collapse").sideNav();
