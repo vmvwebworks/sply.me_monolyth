@@ -5,6 +5,8 @@ class ConversationsController < ApplicationController
   def index
     redirect_to root_path
   end
+  def new
+  end
   def show
     @conversation = Conversation.find(params[:id])
     unless @conversation.users.ids.include? current_user.id
